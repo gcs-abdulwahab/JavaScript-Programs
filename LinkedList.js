@@ -6,9 +6,12 @@ class Node{
 };
 
 class LinkedList{
+   
+     var head ;
+      var length ;
     constructor(){
-        this.head = null;
-        this.length = 0;
+       head = null;
+        length = 0;
     }
     
     
