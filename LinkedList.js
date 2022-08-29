@@ -62,6 +62,7 @@ class LinkedList{
         else {
             this.head = this.head.link;
         }
+        this.length--;
     }
     
     removeAtLast(){
@@ -80,6 +81,25 @@ class LinkedList{
             this.last = temp;
             temp.link = null;
         }
+        this.length--;
+    }
+    
+    getLength(){
+        return this.length;
+    }
+    
+    getFirst(){
+        if (!this.isEmpty()){
+            return this.head.data;
+        }
+        return -1;
+    }
+
+    getLast(){
+        if (!this.isEmpty()){
+            return this.last.data;
+        }
+        return -1;
     }
         
 };
@@ -94,5 +114,6 @@ l1.print();
 l1.removeAtHead();
 l1.removeAtLast();
 l1.print();
-console.log("head : " + l1.head.data);
-console.log("last : " + l1.last.data);
+console.log("Length : " + l1.getLength());
+console.log("head : " + l1.getFirst());
+console.log("last : " + l1.getLast());
