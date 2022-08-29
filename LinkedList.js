@@ -7,29 +7,25 @@ class Node{
 
 class LinkedList{
     constructor(){
-        var head;
-        var length = 0;
+        this.head = null;
+        this.length = 0;
     }
     
+    
     isEmpty(){
-        return (this.length == 0);
+        return (this.length === 0);
     }
     
     insertAtHead(value){
-        if (this.isEmpty()){
-            head = new Node(value);
-        }
-        else {
-            var newNode = new Node(value);
-            newNode.link = this.head;
-            this.head = newNode;
-        }
+        var newNode = new Node(value);
+        newNode.link = this.head;
+        this.head = newNode;
         this.length++;
     }
     
     insertAtLast(value){
-        if (this.isEmpty()){
-            head = new Node(value);
+        if (this.isEmpty){
+            this.head = new Node(value);
         }
         else {
             var temp = this.head;
@@ -53,9 +49,8 @@ class LinkedList{
 };
 
 var l1 = new LinkedList();
-l1.insertAtHead(1);
-l1.insertAtHead(2);
+l1.insertAtLast(4);
 l1.insertAtHead(3);
-l1.print();
-
-
+l1.insertAtHead(2);
+l1.insertAtHead(1);
+l1.print()
